@@ -8,6 +8,7 @@ server:
 // Definición de nuestro servidor (aquí no se levanta, solo se establecen la configuración)
 
 import express from 'express'
+import kodersRouter from './routers/koders.router.js'
 
 const server = express()
 
@@ -15,7 +16,7 @@ const server = express()
 server.use(express.json())
 
 // Routers
-
+server.use('/koders', kodersRouter)
 
 // Middleware para manejar errores - Middleware handleErros
 
