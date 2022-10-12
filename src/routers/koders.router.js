@@ -1,11 +1,12 @@
 import express from 'express'
 import * as kodersUsesCases from '../useCases/koders.use.js'
+import { auth } from '../middlewares/auth.js'
 
 const router = express.Router() // Generar router
 // La comunicación va de fuera hacia dentro
 // Endpoint -> Casos de uso -> Modelos
 
-router.get('/', async (request, response, next) => {
+router.get('/', auth, async (request, response, next) => {
     try {
         const allKoders = await kodersUsesCases.getAll()
 
@@ -28,7 +29,7 @@ router.get('/', async (request, response, next) => {
 
 // GET
 
-router.get('/:idKoder', async (request, response) => {
+router.get('/:idKoder', auth, async (request, response) => {
     try {
         const { idKoder } = request.params
         console.log(idKoder)

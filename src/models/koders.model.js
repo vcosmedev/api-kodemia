@@ -31,8 +31,22 @@ const koderSchema = new mongoose.Schema({
     isGraduate: {
         type: Boolean,
         default: false // Tener un valor por defecto
+    },
+    email: {
+        type: String,
+        required: true,
+        tirm: true,
+        match: /.*@.*\..*/
+    },
+    password: {
+        type: String,
+        required: true
     }
 })
+
+
+// Regex -> Permite trabajar con patrones de búsquedas sobre texto
+// match: -> forma en la que se registra una regex en tuestro scheme -> match: /regex/
 
 // Crear el modelo
 //            (nombre colección a la que hacemos referencia, schema)
