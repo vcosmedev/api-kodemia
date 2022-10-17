@@ -6,11 +6,12 @@ function auth(request, response, next){
     try {
         const {authorization: token} = request.headers // HEADERS
 
-        const isValidToken = jwt.verify(token) // Comprobar a través de la función verify si es un token válido
-        console.log(isValidToken)
+        const tokenDecoded = jwt.verify(token) // Comprobar a través de la función verify si es un token válido
+        console.log(tokenDecoded) // {id: ''}
 
-        if(!isValidToken) throw new Error('No autorizado D:')
-
+        if(!tokenDecoded) throw new Error('No autorizado D:')
+        request.userCurrent = tokenDecoded.id
+        request.userCurrent = tokenDecoded.role
         next()
 
     } catch (error) {

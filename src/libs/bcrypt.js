@@ -14,7 +14,7 @@ function hash(plainText) {
 
 export default {
     ... bcrypt, // Todo lo que contenga bcrypt
-    hash // función hash
+    hash // Función hash
 }
 
-// spread operator
+// Spread operator
