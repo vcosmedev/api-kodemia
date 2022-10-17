@@ -13,7 +13,7 @@ function auth(request, response, next){
         request.userCurrent = tokenDecoded.id
         request.userCurrent = tokenDecoded.role
         next()
-
+        
     } catch (error) {
         response.status(401)
         response.json({

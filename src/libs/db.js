@@ -1,6 +1,7 @@
 // Generar una función que nos permita conectarnos a la BD
 import mongoose from 'mongoose'
 import * as dotenv from 'dotenv'
+
 dotenv.config()
 
 // Importar todas las variables de entorno

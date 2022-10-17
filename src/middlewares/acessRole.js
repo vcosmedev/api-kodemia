@@ -1,4 +1,4 @@
-// Factory function -> función que genera funciones
+// Factory function -> Función que genera funciones
 
 // ... validRoles -> Otra forma de aplicar spread operator
 function access(... validRoles) {
@@ -6,9 +6,9 @@ function access(... validRoles) {
         // validRoles ['admin, 'user]
         try {
             console.log('Role del usuario logueado: ', request.roleCurrent)
-            if(!validRoles.includes(request.roleCurrent)) throw new Error ('Not access!')
+            if(!validRoles.includes(request.roleCurrent)) throw new Error('Not access!')
             next()
-        } catch {
+        } catch (error){
             response.status(403)
             response.json({
                 success: false,

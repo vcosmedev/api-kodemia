@@ -1,7 +1,6 @@
 import mongoose from 'mongoose'
 
 // Schema de Koders
-
 const koderSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -26,7 +25,7 @@ const koderSchema = new mongoose.Schema({
     gender: {
         type: String,
         required: true,
-        enum: ['h', 'm'] // Qué valores son válidos para este campo
+        enum: ['h', 'm'] // Qué valores son válidos para este campo -> Este campo solo puede recibir estos dos valores
     },
     isGraduate: {
         type: Boolean,
@@ -46,10 +45,10 @@ const koderSchema = new mongoose.Schema({
 
 
 // Regex -> Permite trabajar con patrones de búsquedas sobre texto
-// match: -> forma en la que se registra una regex en tuestro scheme -> match: /regex/
+// match: -> Forma en la que se registra una regex en un Schema -> match: /regex/
 
 // Crear el modelo
-//            (nombre colección a la que hacemos referencia, schema)
-const Koder = mongoose.model('koders', koderSchema)
+// export const Koder = mongoose.model('nombre colección a la que se hace referencia', Schema)
+export const Koder = mongoose.model('koders', koderSchema)
 
-export {Koder}
+// export {Koder} /* Export -> También se puede exportar en la constante anterior añadiendo 'export' */

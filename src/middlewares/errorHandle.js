@@ -3,7 +3,8 @@ export function errorHandle(error, request, response, next) {
     console.log(error.name)
     console.log(error.status)
     console.log(error.message)
-    if(error.name === 'ValidationError') {
+
+    if(error.name === 'Validation Error') {
         response.status(400).json({success: false, message: error.message})
         return
     }
@@ -13,4 +14,4 @@ export function errorHandle(error, request, response, next) {
     })
 }
 
-export {errorHandle}
+// export {errorHandle} /* -> Otra forma de exportar: añadiendo 'export' al inicio de la función */

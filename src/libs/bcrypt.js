@@ -6,7 +6,6 @@ import bcrypt from 'bcrypt'
 const saltRounds = 10;
 
 // Generar función que se llame hash
-
 function hash(plainText) {
     return bcrypt.hash(plainText, saltRounds) // Regresa una promesa
 
