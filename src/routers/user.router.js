@@ -1,5 +1,6 @@
 import express from 'express'
-import * as userUseCases from '../useCases/users.use.js'
+import * as usersUseCases from '../useCases/users.use.js'
+import { StatusHttp } from '../libs/statusHttp.js'
 
 const router = express.Router()
 
@@ -14,3 +15,5 @@ router.post('/', async (request, response, next) => {
         next(new StatusHttp(error.message, error.status, error.name))
     }
 })
+
+export default router
