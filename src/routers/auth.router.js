@@ -55,5 +55,8 @@ Los users podrán:
 
 
 - Modificar el middleware de auth para validar el error
+    - Crear middleware que valide role
+
+- Validar desde el caso de uso
 
 */
